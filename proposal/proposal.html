@@ -1,94 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="author" content="your name">
     <meta name="description" content="description of your page">
-    <title>My Page Title</title>
+    <title>UW Sickness Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <header>
-    <h1>This is our title</h1>
-<header>
+    <h1><span class="fancy">UW</span> Sickness Tracker</h1>
+    <header>
 
-<body>
-<section>
-    <h2>Problem Domain</h2>
-    Although pandemic restrictions have been lifted, Covid-19 is still a prominent issue within our society, 
-    especially on college campuses. The main issue at hand is the need for a user-friendly tool that allows 
-    for personal sickness tracking for students and faculty, as well as real-time information on COVID-19 cases on campus. 
-    The UW covid tracker is an application aimed to address the challenge of tracking and managing coronavirus 
-    cases within the University of Washington campus, enhancing campus safety measures.  
-    The initial solution provided by the university is the University of Washington COVID-19 Information website. We have researched
-    other ways to get real-time information on COVID-19, Such as <a href="https://mhealth.jmir.org/2021/3/e24322" target="_blank">Health Apps for Combating COVID-19: Descriptive Review and Taxonomy</a>
-    by Manal Almakli, who explain that use of the technology can  
-    address the propagation of COVID-19 and diverse applications of these technologies in healthcare as a response to 
-    this public health crisis.  Using what we have learned from Almakli's article, we wanted to educated  individuals on COVID-19 facts and 
-    steps to take to protect others at our university. 
-    The UW covid tracker will enhance this information, by displaying an comprehensive platform that 
-    informs users on covid-19 cases throughout the university. The application will create interactive 
-    maps that are constantly updated to show the distribution of COVID-19 cases on campus. Furthermore, there will 
-    be a personal sickness tracker feature, that will provide users with recommendations based on their own health 
-    and symptoms. Finally, there will be forums and chats, where communities can engage to promote a safer environment. 
-
-</section>
-
-<section>
-    <h2>App Description</h2>
-    more content here (to be pasted in)
-
-    <h3>Our Users</h3>
-    The users of this application are those affiliated with the University of Washington,
-    including but not limited to students (our expected main audience), faculty, administrators,
-    and custodial staff. To be more specific, 
-    we expected some of our most important users to be those who are disabled or immunocompromised, 
-    as we expect them to benefit the most from tracking the health of themselves and others.
-
-    <h3>The Features</h3>
-    <li>The main thing that users will do is anonymously notify those who were near them when
-        they were actively sick with COVID-19 or even a different common temporary illness
-        such as colds or fevers, through a campus map that displays the number of those who were sick
-        in certain areas/buildings and during what times. This map will display data input by sick users
-        to automatically create visualizations indicating where the most people have been sick 
-        and with what illness. Our motatvation comes from an article called 
-        <a href="https://www.slu.edu/news/2021/january/covid-tracking-app.php" target="_blank">SLU Researchers Develop App to Track COVID-19 Symptoms</a>
-        who have also incorpated geospatial data in their aplications  We have belive that leveraging geospatial technology 
-        to advance, educate, and enhance public health exemplifies how health and its outcomes are influenced by 
-        location, as evidenced by the impact of COVID-19.
-    </li>
-    <li>Another feature we plan to implement is a personal illness tracker. This information will be kept
-        private to the user only and is an optional feature for them to log details about the times
-        they were sick. Once a user becomes sick, they can go into their personal information and
-        record details about their sickness, including start date, symptoms, and measures taken to
-        treat the illness. This creates a personal medical record for them to
-        look back on in the future potentially when treating more serious illnesses, or even just to compare
-        current immune system reactions to past ones.
-    </li>
-    <li>A third feature we plan to implement is a community health resource sharing feature.
-        With this feature, sick users can post requests and also available resources for those who are
-        ill and live near their location. Users can then arrange a contactless pick up time to deliver
-        resources such as sickness meds, foods, masks, COVID-19 tests, and more. We mainly expect this
-        feature to be used by students who live on-campus near other students, but it can be implemented
-        to UW surrounding areas as well. To avoid potential abuse of this feature (eg. selling products),
-        users will only be able to choose kinds of resources from dropdown menus.
-    </li>
-</section>
-
-<section>
-    <h3>The Data</h3>
-    The main data users will be viewing is Google Maps data. Using an API, we plan to display live
-    Google Maps along with user input data that is automatically cleaned, filtered, and visualized for users.
-    The link to the API can be found <a href="https://developers.google.com/maps/documentation/embed/get-started">here</a>
-    (Note: we as a group are very unfamiliar with using APIs so we hope to learn more about implementing
-    them through this project).
-</section>
-
-<section>
-    <h3>Conclusion</h3>
-    This app solves the need for student illness trackers here at the University of Washington,
-    and aims to improve community health through resource sharing and anonymous self-reporting.
-</section>
+        <body>
+            <!--Problem-->
+            <section>
+                <h2>Problem Domain</h2>
+                <p>
+                    Although pandemic restrictions have been lifted, Covid-19 is still a prominent issue within our
+                    society, especially on college campuses. The main issue at hand is the need for a user-friendly
+                    tool that allows for personal sickness tracking for students and faculty, as well as real-time
+                    information on COVID-19 cases on campus. The UW covid tracker is an application aimed to address
+                    the challenge of tracking and managing coronavirus cases within the University of Washington campus,
+                    enhancing campus safety measures. The initial solution provided by the university is the University
+                    of Washington COVID-19 Information website. We have researched other ways to get real-time
+                    information
+                    on COVID-19, Such as <a href="https://mhealth.jmir.org/2021/3/e24322" target="_blank">Health Apps
+                        for Combating
+                        COVID-19: Descriptive Review and Taxonomy</a> by Manal Almakli, who explain that use of the
+                    technology can
+                    address the propagation of COVID-19 and diverse applications of these technologies in healthcare as
+                    a response to this public health crisis. Using what we have learned from Almakli's article, we
+                    wanted to educated
+                    individuals on COVID-19 facts and steps to take to protect others at our university.
+                    The UW covid tracker will enhance this information, by displaying an comprehensive platform that
+                    informs users on covid-19 cases throughout the university. The application will create interactive
+                    maps that are constantly updated to show the distribution of COVID-19 cases on campus. Furthermore,
+                    there will be a personal sickness tracker feature, that will provide users with recommendations
+                    based on their
+                    own health and symptoms. Finally, there will be forums and chats, where communities can engage to
+                    promote a
+                    safer environment.
+                </p>
 
 
-</body>
+            </section>
+
+
+            <!--Description-->
+            <section>
+                <h2>App Description</h2>
+
+                <h3>Our Users</h3>
+                <p>
+                    The users of this application are those affiliated with the University of Washington,
+                    including but not limited to students (our expected main audience), faculty, administrators,
+                    and custodial staff. To be more specific,
+                    we expected some of our most important users to be those who are disabled or immunocompromised,
+                    as we expect them to benefit the most from tracking the health of themselves and others.
+                </p>
+
+
+
+                <!--Features-->
+                <section>
+                    <h3>The Features</h3>
+                    <li>The main thing that users will do is anonymously notify those who were near them when
+                        they were actively sick with COVID-19 or even a different common temporary illness
+                        such as colds or fevers, through a campus map that displays the number of those who were sick
+                        in certain areas/buildings and during what times. This map will display data input by sick users
+                        to automatically create visualizations indicating where the most people have been sick
+                        and with what illness. Our motatvation comes from an article called
+                        <a href="https://www.slu.edu/news/2021/january/covid-tracking-app.php" target="_blank">SLU
+                            Researchers Develop App to Track COVID-19 Symptoms</a>
+                        who have also incorpated geospatial data in their aplications We have belive that leveraging
+                        geospatial technology
+                        to advance, educate, and enhance public health exemplifies how health and its outcomes are
+                        influenced by
+                        location, as evidenced by the impact of COVID-19.
+                    </li>
+                    <li>Another feature we plan to implement is a personal illness tracker. This information will be
+                        kept
+                        private to the user only and is an optional feature for them to log details about the times
+                        they were sick. Once a user becomes sick, they can go into their personal information and
+                        record details about their sickness, including start date, symptoms, and measures taken to
+                        treat the illness. This creates a personal medical record for them to
+                        look back on in the future potentially when treating more serious illnesses, or even just to
+                        compare
+                        current immune system reactions to past ones.
+                    </li>
+                    <li>A third feature we plan to implement is a community health resource sharing feature.
+                        With this feature, sick users can post requests and also available resources for those who are
+                        ill and live near their location. Users can then arrange a contactless pick up time to deliver
+                        resources such as sickness meds, foods, masks, COVID-19 tests, and more. We mainly expect this
+                        feature to be used by students who live on-campus near other students, but it can be implemented
+                        to UW surrounding areas as well. To avoid potential abuse of this feature (eg. selling
+                        products),
+                        users will only be able to choose kinds of resources from dropdown menus.
+                    </li>
+                </section>
+
+            </section>
+
+
+            <!--Users Information-->
+            <section>
+                <h3>The Data</h3>
+                <p>
+                    The main data users will be viewing is Google Maps data. Using an API, we plan to display live
+                    Google Maps along with user input data that is automatically cleaned, filtered, and visualized for
+                    users.
+                    The link to the API can be found <a
+                        href="https://developers.google.com/maps/documentation/embed/get-started">here</a>
+                    (Note: we as a group are very unfamiliar with using APIs so we hope to learn more about implementing
+                    them through this project).
+                </p>
+
+            </section>
+
+
+            <!--Solution/Conclusion-->
+            <section>
+                <h3>Conclusion</h3>
+                <p>
+                    This app solves the need for student illness trackers here at the University of Washington,
+                    and aims to improve community health through resource sharing and anonymous self-reporting.
+                </p>
+
+            </section>
+
+
+        </body>
+
 </html>
