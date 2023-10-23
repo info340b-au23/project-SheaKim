@@ -80,7 +80,7 @@ footer p a {
 }
 
 nav ul li a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -165,6 +165,7 @@ p, dl {
   transform: rotate(45deg);
 }
 
+<<<<<<< HEAD
 .sicktrkr{
     display: flex;
     flex-direction: column;
@@ -185,4 +186,103 @@ div {
 .sicklog-img{
     width: 600px;
     height:400px;
+=======
+/* HOME PAGE */
+  /* Nav bar */
+  .nav_container {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    top: 0;
+  }
+
+  .nav_logo {
+    height: 100%;
+    display: table;
+    float: left;
+  }
+
+  .nav_logo h1 a {
+    color: white;
+    text-decoration: none;
+    font-weight: 550;
+  }
+
+  .nav_container h1 {
+    color: white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.navigation {
+    float: right;
+    height: 100%;
+}
+
+.navigation a {
+    height: 100%;
+    display: table;
+    float: left;
+    padding: .5rem 2.5rem;
+    font-weight: bold;
+}
+
+.navigation a:last-child {
+    padding-right: 0;
+}
+
+.navigation a li {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+    font-family: Courier, monospace;
+    font-size: 16px;
+}
+
+/* Slogan */
+.slogan {
+    padding-top: 5rem;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    display: grid;
+    padding-bottom: 5rem;
+}
+
+.slogan p {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.slogan img {
+    height: 250px;
+    align-content: center;
+}
+
+.slogan button {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: rgb(237, 219, 249);
+    border-radius: 15px;
+    font-size: 1.25rem;
+    border: none;
+    padding: .5rem;
+    font-weight: 500;
+}
+
+.right_choice {
+    text-align: center;
+}
+
+.right_choice li {
+    display: inline-block;
+    margin: 2rem;
+>>>>>>> 1fff4c8ef48e13137477e6a0e7dc04a3ee148384
 }
