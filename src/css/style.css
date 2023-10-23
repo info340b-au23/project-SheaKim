@@ -165,6 +165,27 @@ p, dl {
   transform: rotate(45deg);
 }
 
+.sicktrkr{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px;
+}
+
+textarea, input, select, button {
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+div {
+    width: 80%;
+}
+
+.sicklog-img{
+    width: 600px;
+    height:400px;
+}
 /* HOME PAGE */
   /* Nav bar */
   .nav_container {
