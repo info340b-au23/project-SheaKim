@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Health Wingman Sickness Log</title>
-  <meta name="author" content="INFO 340 BA2">
-  <link rel="icon" href="">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="author" content="Vaibava">
+  <meta name="Sickness Log" content="enter symptoms, medication, and more">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\style.css">
 </head>
 <body> 
   <header>
     <nav>
       <ul>
-        <li><a href="Andrew.html">Main</a></li>
-        <li><a href="Jainaba.html">Search Function</a></li>
+        <li><a href="Andrew.html">Sickness Tracker</a></li>
         <li><a href="Sheamin.html">Medication Tracker</a></li>
+        <li><a href="Vaibava.html">Sickness Log</a></li>
+        <li><a href="Jainaba.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
     <h1>Sickness Tracker - Log your data here!</h1>
   </header>
   <main>
-    <form>
+    <form class="sicktrkr">
       <label>Symptoms:</label>
       <textarea></textarea>
       <label>Description:</label>
@@ -32,15 +36,18 @@
     </form>
     <div>
       <h2>Summary Data</h2>
-      <p>graph of data will be placed here</p>
       <select>
         <option>Past Week</option>
         <option>Past Month</option>
         <option>Past Year</option>
       </select>
+      <p>graph of data will be placed here</p>
+      <img src="img\graph-sicknesslog.png" class="sicklog-img" alt="Picture of Sickness log examples">
     </div>
   </main>
   <footer>
-    <p>&copy: 2023 Health Wingman | Contact: contact info</p>
+    <p><a href="mailto:email@sickness"><span class="material-icons">email</span> email@coffee.uw.edu</a></p>
+    <p><a href="tel:555-123-4567"><span class="material-icons">phone</span> 555-123-4567</a></p>
+    <p>&copy; Sickness Tracker</p>
   </footer>
 </body>
