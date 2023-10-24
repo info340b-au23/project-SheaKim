@@ -336,3 +336,114 @@ ol {
     border-radius: 2em;
     transition: all .3s ease-out;
   }
+
+  body {
+    background: #ccc;
+    font-family: 'Roboto', sans-serif;
+    background-color: antiquewhite;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    color: white;
+    top: 0;
+    left: 0;
+    background-color: #4b2e83;
+    padding: .8rem;
+    padding-bottom: 1rem;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+    border-bottom: solid #f0f0f0 .8rem;
+    transition: ease-out .25s;
+}
+
+header {
+    color: white;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    background-image: url("../img/uw-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #4b2e83;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #4b2e83;
+}
+
+p {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #4b2e83;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #4b2e83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #593b98;
+}
