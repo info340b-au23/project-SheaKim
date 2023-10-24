@@ -15,9 +15,11 @@ body {
     margin: 50px auto;
     padding: 25px;
 }
+
 .mytabs input[type="radio"] {
     display: none;
 }
+
 .mytabs label {
     padding: 25px;
     background: #e2e2e2;
@@ -31,15 +33,16 @@ body {
     order: 1;
     display: none;
 }
+
 .mytabs .tab h2 {
     font-size: 3em;
 }
 
-.mytabs input[type='radio']:checked + label + .tab {
+.mytabs input[type='radio']:checked+label+.tab {
     display: block;
 }
 
-.mytabs input[type="radio"]:checked + label {
+.mytabs input[type="radio"]:checked+label {
     background: #fff;
 }
 
@@ -79,7 +82,7 @@ header {
 }
 
 footer p a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
@@ -101,7 +104,8 @@ nav ul li a:hover {
     padding: 1rem;
 }
 
-p, dl {
+p,
+dl {
     margin-top: 0;
     margin-bottom: 1rem;
 }
@@ -135,12 +139,12 @@ p, dl {
 }
 
 /* Step 4: When hovering, add a background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
     background-color: #c8e9e3;
 }
 
 /* Step 5: When the checkbox is checked, add a different background */
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
     background-color: #32e0f4;
 }
 
@@ -152,24 +156,24 @@ p, dl {
 }
 
 /* Step 7: Display the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
     display: block;
 }
 
 /* Step 8: Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-.sicktrkr{
+.sicktrkr {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -177,43 +181,47 @@ p, dl {
     margin: 20px;
 }
 
-textarea, input, select, button {
+textarea,
+input,
+select,
+button {
     margin: 5px 0;
     padding: 5px;
-  }
+}
 
 div {
     width: 80%;
 }
 
-.sicklog-img{
+.sicklog-img {
     width: 600px;
-    height:400px;
+    height: 400px;
 }
+
 /* HOME PAGE */
-  /* Nav bar */
-  .nav_container {
+/* Nav bar */
+.nav_container {
     width: 1000px;
     height: 100%;
     display: block;
     margin: 0 auto;
     top: 0;
-    
-  }
 
-  .nav_logo {
+}
+
+.nav_logo {
     height: 100%;
     display: table;
     float: left;
-  }
+}
 
-  .nav_logo h1 a {
+.nav_logo h1 a {
     color: white;
     text-decoration: none;
     font-weight: 550;
-  }
+}
 
-  .nav_container h1 {
+.nav_container h1 {
     color: white;
     height: 100%;
     display: table-cell;
@@ -291,20 +299,24 @@ div {
 }
 
 ol {
-    counter-reset: li; /* Initiate a counter */
-    list-style: none; /* Remove default numbering */
-       list-style: decimal; /* Keep using default numbering for IE6/7 */
+    counter-reset: li;
+    /* Initiate a counter */
+    list-style: none;
+    /* Remove default numbering */
+    list-style: decimal;
+    /* Keep using default numbering for IE6/7 */
     font: 15px 'trebuchet MS', 'lucida sans';
     padding: 0;
     margin-bottom: 4em;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  }
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
 
-  ol ol {
-    margin: 0 0 0 2em; /* Add some left margin for inner lists */
-  }
+ol ol {
+    margin: 0 0 0 2em;
+    /* Add some left margin for inner lists */
+}
 
-  .rounded-list a{
+.rounded-list a {
     position: relative;
     display: block;
     padding: .4em .4em .4em 2em;
@@ -314,17 +326,17 @@ ol {
     text-decoration: none;
     border-radius: .3em;
     transition: all .3s ease-out;
-  }
+}
 
-  .rounded-list a:hover{
+.rounded-list a:hover {
     background: #eee;
-  }
+}
 
-  .rounded-list a:hover:before{
+.rounded-list a:hover:before {
     transform: rotate(360deg);
-  }
+}
 
-  .rounded-list a:before{
+.rounded-list a:before {
     content: counter(li);
     counter-increment: li;
     position: absolute;
@@ -340,9 +352,9 @@ ol {
     font-weight: bold;
     border-radius: 2em;
     transition: all .3s ease-out;
-  }
+}
 
-  body {
+body {
     background: #ccc;
     font-family: 'Roboto', sans-serif;
     background-color: antiquewhite;
@@ -357,6 +369,7 @@ nav {
     background-color: #4b2e83;
     padding: .8rem;
     padding-bottom: 1rem;
+    z-index: 1;
 }
 
 nav ul {
@@ -454,35 +467,111 @@ button:hover {
 }
 
 
-  .col_two {
+.col_two {
     flex: 1;
     flex-basis: 0;
     text-align: center;
-  }
+}
 
-  .col_two h2 {
+.col_two h2 {
     font-weight: 500;
-  }
+}
 
-  .flex-container {
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-  }
+}
 
-  .card {
+.card {
     display: inline-block;
     flex: 0 0 250px;
     margin: 2rem;
     align-items: center;
-  }
+}
 
-  .card img {
+.card img {
     width: 150px;
     padding-bottom: 1rem;
-  }
+}
 
-  .card p {
+.card p {
     font-weight: 500;
-  }
+}
+
+h4 {
+    text-align: center;
+}
+
+.examples {
+    padding-top: 10rem;
+    align-items: center;
+}
+
+.examples img {
+    height: 300px;
+}
+
+.examples .container {
+    display: inline-flex;
+    padding-bottom: 10rem;
+}
+
+.examples .container .example-description {
+    padding-top: 5rem;
+    vertical-align: middle;
+}
+
+.examples .container .example-description h4 {
+    font-weight: 600;
+}
+
+#resource {
+    width: 60%;
+    padding-left: 5rem;
+}
+
+.container.last {
+    padding-left: 15em;
+}
+
+.summary {
+    margin: auto;
+    padding-bottom: 10rem;
+}
+
+.summary img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview {
+    margin: auto;
+    padding-bottom: 10rem;
+}
+
+.overview img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview-example li {
+    padding-left: 3rem;
+    vertical-align: middle;
+}
+
+.get-started {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: rgb(237, 219, 249);
+    border-radius: 15px;
+    font-size: 1.25rem;
+    border: none;
+    padding: .5rem;
+    font-weight: 500;
+}
