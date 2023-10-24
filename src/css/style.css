@@ -575,3 +575,115 @@ h4 {
     padding: .5rem;
     font-weight: 500;
 }
+
+/* Default styles for larger screens */
+
+@media (max-width: 1200px) {
+  /* Styles for screens up to 1200px wide */
+  .nav_container {
+    width: 80%;
+  }
+
+  .container,
+  .sicktrkr {
+    width: 90%;
+    max-width: none;
+  }
+
+  .mytabs {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+
+  .nav_logo h1 a {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Styles for screens up to 992px wide */
+  .nav_container {
+    width: 90%;
+  }
+
+  .nav_logo h1 a {
+    font-size: 24px;
+  }
+
+  .navigation a {
+    padding: .5rem 1rem;
+  }
+
+  .nav_container h1 {
+    font-size: 22px;
+  }
+
+  .slogan {
+    width: 90%;
+  }
+
+  .slogan img {
+    height: 120px;
+  }
+
+  .slogan button {
+    width: 40%;
+  }
+
+  .right_choice li {
+    margin: 0.5rem;
+  }
+
+  .rounded-list a {
+    padding: .4em .4em .4em 1em;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    margin: 1rem 0;
+  }
+
+  .card img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  .nav_logo h1 a {
+    font-size: 20px;
+  }
+
+  .navigation a {
+    padding: .5rem 0.8rem;
+  }
+
+  .nav_container h1 {
+    font-size: 20px;
+  }
+
+  .slogan img {
+    height: 80px;
+  }
+
+  .slogan button {
+    width: 50%;
+  }
+
+  .right_choice li {
+    margin: 0.3rem;
+  }
+
+  .rounded-list a {
+    padding: .4em .4em .4em 0.8em;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    margin: 0.5rem 0;
+  }
+
+  .card img {
+    width: 60px;
+  }
+}
