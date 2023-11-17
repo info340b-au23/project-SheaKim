@@ -1,0 +1,687 @@
+/* styles to define: main-about, about-heading, about-text, login, main-login*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ccc;
+    font-family: 'Roboto', sans-serif;
+    background-color: antiquewhite;
+}
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+.mytabs input[type="radio"] {
+    display: none;
+}
+
+.mytabs label {
+    padding: 25px;
+    background: #e2e2e2;
+    font-weight: bold;
+}
+
+.mytabs .tab {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none;
+}
+
+.mytabs .tab h2 {
+    font-size: 3em;
+}
+
+.mytabs input[type='radio']:checked+label+.tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked+label {
+    background: #fff;
+}
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    color: white;
+    top: 0;
+    left: 0;
+    background-color: #4b2e83;
+    padding: .8rem;
+    padding-bottom: 1rem;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    display: inline;
+}
+
+header {
+    color: white;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    background-image: url("../img/uw-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #4b2e83;
+    background-attachment: fixed;
+    width: 100%;
+
+}
+
+footer p a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+    border-bottom: solid #f0f0f0 .8rem;
+    transition: ease-out .25s;
+}
+
+.container {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+p,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Customize the label (the area around the checklist) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Remove the default checkboxes */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/*Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #79e3d0;
+}
+
+/* When hovering, add a background color */
+.container:hover input~.checkmark {
+    background-color: #c8e9e3;
+}
+
+/* When the checkbox is checked, add a different background */
+.container input:checked~.checkmark {
+    background-color: #32e0f4;
+}
+
+/* Step 6: Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.sicktrkr {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px;
+}
+
+textarea,
+input,
+select,
+button {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+div {
+    width: 80%;
+}
+
+.sicklog-img {
+    width: 600px;
+    height: 400px;
+}
+
+/* HOME PAGE */
+/* Nav bar */
+.nav_container {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    top: 0;
+
+}
+
+.nav_logo {
+    height: 100%;
+    display: table;
+    float: left;
+}
+
+.nav_logo h1 a {
+    color: white;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.nav_container h1 {
+    color: white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.navigation {
+    float: right;
+    height: 100%;
+}
+
+.navigation a {
+    height: 100%;
+    display: table;
+    float: left;
+    padding: .5rem 2.5rem;
+    font-weight: bold;
+}
+
+.navigation a:last-child {
+    padding-right: 0;
+}
+
+.navigation a li {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+    font-family: Courier, monospace;
+    font-size: 16px;
+}
+
+/* Slogan */
+.slogan {
+    padding-top: 5rem;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    display: grid;
+    padding-bottom: 5rem;
+}
+
+.slogan p {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.slogan img {
+    height: 250px;
+    align-content: center;
+}
+
+.slogan button {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: rgb(237, 219, 249);
+    border-radius: 15px;
+    font-size: 1.25rem;
+    border: none;
+    padding: .5rem;
+    font-weight: 500;
+}
+
+.right_choice {
+    text-align: center;
+}
+
+.right_choice li {
+    display: inline-block;
+    margin: 2rem;
+}
+
+ol {
+    counter-reset: li;
+    list-style: none;
+    list-style: decimal;
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+ol ol {
+    margin: 0 0 0 2em;
+}
+
+.rounded-list a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+}
+
+.rounded-list a:hover {
+    background: #eee;
+}
+
+.rounded-list a:hover:before {
+    transform: rotate(360deg);
+}
+
+.rounded-list a:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+body {
+    background: #ccc;
+    font-family: 'Roboto', sans-serif;
+    background-color: antiquewhite;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    color: white;
+    top: 0;
+    left: 0;
+    background-color: #4b2e83;
+    padding: .8rem;
+    padding-bottom: 1rem;
+    z-index: 1;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+    border-bottom: solid #f0f0f0 .8rem;
+    transition: ease-out .25s;
+}
+
+header {
+    color: white;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    background-image: url("../img/uw-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #4b2e83;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #4b2e83;
+}
+
+p {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #4b2e83;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #4b2e83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #593b98;
+}
+
+
+.col_two {
+    flex: 1;
+    flex-basis: 0;
+    text-align: center;
+}
+
+.col_two h2 {
+    font-weight: 500;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.card {
+    display: inline-block;
+    flex: 0 0 250px;
+    margin: 2rem;
+    align-items: center;
+}
+
+.card img {
+    width: 150px;
+    padding-bottom: 1rem;
+}
+
+.card p {
+    font-weight: 500;
+}
+
+h4 {
+    text-align: center;
+}
+
+.examples {
+    padding-top: 10rem;
+    align-items: center;
+}
+
+.examples img {
+    height: 300px;
+}
+
+.examples .container {
+    display: inline-flex;
+    padding-bottom: 10rem;
+}
+
+.examples .container .example-description {
+    padding-top: 5rem;
+    vertical-align: middle;
+}
+
+.examples .container .example-description h4 {
+    font-weight: 600;
+}
+
+#resource {
+    width: 60%;
+    padding-left: 5rem;
+}
+
+.container.last {
+    padding-left: 15em;
+}
+
+.summary {
+    margin: auto;
+    padding-bottom: 10rem;
+}
+
+.summary img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview {
+    margin: auto;
+    padding-bottom: 10rem;
+}
+
+.overview img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview-example li {
+    padding-left: 3rem;
+    vertical-align: middle;
+}
+
+.get-started {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: rgb(237, 219, 249);
+    border-radius: 15px;
+    font-size: 1.25rem;
+    border: none;
+    padding: .5rem;
+    font-weight: 500;
+}
+
+/* Default styles for larger screens */
+
+@media (max-width: 1200px) {
+  /* Styles for screens up to 1200px wide */
+  .nav_container {
+    width: 80%;
+  }
+
+  .container,
+  .sicktrkr {
+    width: 90%;
+    max-width: none;
+  }
+
+  .mytabs {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+
+  .nav_logo h1 a {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Styles for screens up to 992px wide */
+  .nav_container {
+    width: 90%;
+  }
+
+  .nav_logo h1 a {
+    font-size: 24px;
+  }
+
+  .navigation a {
+    padding: .5rem 1rem;
+  }
+
+  .nav_container h1 {
+    font-size: 22px;
+  }
+
+  .slogan {
+    width: 90%;
+  }
+
+  .slogan img {
+    height: 120px;
+  }
+
+  .slogan button {
+    width: 40%;
+  }
+
+  .right_choice li {
+    margin: 0.5rem;
+  }
+
+  .rounded-list a {
+    padding: .4em .4em .4em 1em;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    margin: 1rem 0;
+  }
+
+  .card img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  .nav_logo h1 a {
+    font-size: 20px;
+  }
+
+  .navigation a {
+    padding: .5rem 0.8rem;
+  }
+
+  .nav_container h1 {
+    font-size: 20px;
+  }
+
+  .slogan img {
+    height: 80px;
+  }
+
+  .slogan button {
+    width: 50%;
+  }
+
+  .right_choice li {
+    margin: 0.3rem;
+  }
+
+  .rounded-list a {
+    padding: .4em .4em .4em 0.8em;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    margin: 0.5rem 0;
+  }
+
+  .card img {
+    width: 60px;
+  }
+}
