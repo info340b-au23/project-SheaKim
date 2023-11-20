@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header'
 
-const sickLog = () => {
+const SickLog = () => {
   const [logData, setLogData] = useState({
       symptoms: '',
       description: '',
@@ -61,4 +61,4 @@ const sickLog = () => {
   );
 };
 
-export default sickLog;
+export default SickLog;
