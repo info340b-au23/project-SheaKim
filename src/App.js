@@ -20,7 +20,7 @@ import SickLog from './components/Sickness Log';
 function App() {
 
     return (
-            <SickLog />
+            <HomePage />
     )
 }
 
