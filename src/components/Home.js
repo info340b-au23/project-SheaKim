@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <main>
             <section>
-                <div class="slogan">
+                <div className="slogan">
                     <h2>Your Wingman to Health</h2>
                     <p>Track your medication, log your sickness, and find resources to support your health</p>
                     <button>Login</button>
@@ -13,28 +13,28 @@ export default function Footer() {
                 </div>
             </section>
 
-            <section class="col_two space">
+            <section className="col_two space">
                 <h2>Perfect If You Are</h2>
-                <div class="flex-container">
-                    <div class="card border-0">
+                <div className="flex-container">
+                    <div className="card border-0">
                         
                             <p>Monitoring Your Own Health</p>
                     </div>
-                    <div class="card border-0">
+                    <div className="card border-0">
                         
                             <p>Caring For Loved Ones</p>
                     </div>
-                    <div class="card border-0">
+                    <div className="card border-0">
                         
                             <p>Searching For Diagnosis</p>
                     </div>
                 </div>
             </section>
 
-            <div class="examples">
+            <div className="examples">
                 <section>
-                    <div class="container">
-                        <div class="example-description">
+                    <div className="container">
+                        <div className="example-description">
                             <h4>Medication Tracker</h4>
                             <p>Track your dosage, visualize your plan, schedule refills</p>
                         </div>
@@ -44,8 +44,8 @@ export default function Footer() {
                 </section>
 
                 <section>
-                    <div class="container">
-                        <div class="example-description">
+                    <div className="container">
+                        <div className="example-description">
                             <h4>Log Sickness</h4>
                             <p>Track symptoms, log dates, visualize data</p>
                         </div>
@@ -54,8 +54,8 @@ export default function Footer() {
                 </section>
 
                 <section>
-                    <div class="container last">
-                        <div class="example-description">
+                    <div className="container last">
+                        <div className="example-description">
                             <h4>Find Resources</h4>
                             <p>Enter your symptoms, find resources</p>
                         </div>
@@ -64,7 +64,7 @@ export default function Footer() {
                 </section>
             </div>
 
-            <div class="summary">
+            <div className="summary">
                 <section>
                     <h4>Summarize Your Health</h4>
                     <p>See simple visualizations of your sickness history</p>
@@ -73,9 +73,9 @@ export default function Footer() {
             </div>
 
 
-            <div class="overview">
+            <div className="overview">
                 <section>
-                    <div class="container">
+                    <div className="container">
                         <h4>Your Simple Sickness Tracker</h4>
                         <p>Make Health Easier</p>
                         
