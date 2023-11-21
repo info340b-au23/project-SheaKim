@@ -12,6 +12,8 @@ body {
 
 .home_page {
     background: white; 
+    width: 100%;
+    height: 100%;
 }
 
 .mytabs {
