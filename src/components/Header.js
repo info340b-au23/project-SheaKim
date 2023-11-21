@@ -1,13 +1,30 @@
 import React from 'react';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
-export default function Footer() {
+export default function Header() {
     return (
-        <div className="footer-container">
-        <footer>
-            <p><a href="mailto:email@sickness"><span class="material-icons">email</span> email@sickness.uw.edu</a></p>
-            <p><a href="tel:555-123-4567"><span class="material-icons">phone</span> 555-123-4567</a></p>
-            <p>&copy; Sickness Tracker</p>
-        </footer>
-        </div>
+        <header>
+            <nav>
+                <ul>
+                    <li><Link to="/">Sickness Tracker</Link></li>
+                    <li><CustomLink to="">Medication Tracker</CustomLink></li>
+                    <li><CustomLink to="/sicklog">Sickness Log</CustomLink></li>
+                    <li><CustomLink to="search/">Resources</CustomLink></li>
+                    <li><CustomLink to="/about">About</CustomLink></li>
+                </ul>
+            </nav>
+        </header>
+    )
+}
+
+function CustomLink({ to, children, ...props }) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+    return (
+        <li className={isActive === to ? "active" : ""}>
+            <Link to={to} {...props}>
+                {children}
+            </Link>
+        </li>
     )
 }

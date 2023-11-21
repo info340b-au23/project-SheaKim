@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header'
 
-const sickLog = () => {
+const SickLog = () => {
   const [logData, setLogData] = useState({
       symptoms: '',
       description: '',
@@ -10,11 +10,12 @@ const sickLog = () => {
       comments: '',
     });
     
-
+  const [logs, setLogs] = useState([]);
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setLogData({ ...logData, [name]: value });
-  };
+  }
       
 
   const handleSubmit = (e) => {
@@ -36,11 +37,10 @@ const sickLog = () => {
       date: '',
       comments: '',
     });
-  };
+  }
 
   return (
     <div>
-      <Header /> 
       <main>
         <form className="sicktrkr" onSubmit={handleSubmit}>
           <label>Symptoms:</label>
@@ -56,9 +56,8 @@ const sickLog = () => {
         <div>
         </div>
       </main>
-      <Footer />
     </div>
   );
-};
+}
 
-export default sickLog;
+export default SickLog;
