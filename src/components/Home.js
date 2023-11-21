@@ -10,7 +10,7 @@ import graph from '../img/graph_example.jpg';
 import med from '../img/med_example.jpeg';
 
 export default function HomePage() {
-    return (
+    return (    
         <body className="home_page">
             <section>
                 <div className="slogan">

@@ -40,7 +40,6 @@ const SickLog = () => {
 
   return (
     <div>
-      <Header /> 
       <main>
         <form className="sicktrkr" onSubmit={handleSubmit}>
           <label>Symptoms:</label>
@@ -56,7 +55,6 @@ const SickLog = () => {
         <div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

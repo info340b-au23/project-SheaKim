@@ -86,7 +86,6 @@ header {
     background-color: #4b2e83;
     background-attachment: fixed;
     width: 100%;
-
 }
 
 footer p a {
@@ -207,62 +206,7 @@ div {
 }
 
 /* HOME PAGE */
-/* Nav bar */
-.nav_container {
-    width: 1000px;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-    top: 0;
 
-}
-
-.nav_logo {
-    height: 100%;
-    display: table;
-    float: left;
-}
-
-.nav_logo h1 a {
-    color: white;
-    text-decoration: none;
-    font-weight: 550;
-}
-
-.nav_container h1 {
-    color: white;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 32px;
-    font-weight: 200;
-}
-
-.navigation {
-    float: right;
-    height: 100%;
-}
-
-.navigation a {
-    height: 100%;
-    display: table;
-    float: left;
-    padding: .5rem 2.5rem;
-    font-weight: bold;
-}
-
-.navigation a:last-child {
-    padding-right: 0;
-}
-
-.navigation a li {
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    color: white;
-    font-family: Courier, monospace;
-    font-size: 16px;
-}
 
 /* Slogan */
 .slogan {
