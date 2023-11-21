@@ -10,11 +10,12 @@ const SickLog = () => {
       comments: '',
     });
     
-
+  const [logs, setLogs] = useState([]);
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setLogData({ ...logData, [name]: value });
-  };
+  }
       
 
   const handleSubmit = (e) => {
@@ -36,7 +37,7 @@ const SickLog = () => {
       date: '',
       comments: '',
     });
-  };
+  }
 
   return (
     <div>
@@ -57,6 +58,6 @@ const SickLog = () => {
       </main>
     </div>
   );
-};
+}
 
 export default SickLog;
