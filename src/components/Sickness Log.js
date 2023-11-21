@@ -14,6 +14,7 @@ const SickLog = () => {
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    console.log(name, value); 
     setLogData({ ...logData, [name]: value });
   }
       
