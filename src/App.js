@@ -6,16 +6,8 @@ import Header from './components/Header';
 import HomePage from './components/Home';
 import SymptomSearchEngine from './components/Resource Log';
 import SickLog from './components/Sickness Log';
-// import NewMedForm from './components/Med Tracker';
+import MedTracker from './components/Med Tracker';
 import { Route, Routes } from 'react-router-dom';
-
-// export default function App(props) {
-//     return (
-//         <div>Hello App</div>
-//     );
-// }
-
-// export default App;
 
 function App() {
 
@@ -25,6 +17,7 @@ function App() {
             <div className="container">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/medtracker" element={<MedTracker />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/search" element={<SymptomSearchEngine />} />
                     <Route path="/sicklog" element={<SickLog />} />
@@ -34,5 +27,13 @@ function App() {
         </div>
     )
 }
+
+
+// function App() {
+
+//     return (
+//         <MedTracker />
+//     )
+// }
 
 export default App;
