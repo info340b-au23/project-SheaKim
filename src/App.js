@@ -7,7 +7,7 @@ import HomePage from './components/Home';
 import SymptomSearchEngine from './components/Resource Log';
 import SickLog from './components/Sickness Log';
 // import NewMedForm from './components/Med Tracker';
-
+import { Route, Routes } from 'react-router-dom';
 
 // export default function App(props) {
 //     return (
@@ -20,7 +20,18 @@ import SickLog from './components/Sickness Log';
 function App() {
 
     return (
-            <SickLog />
+        <div>
+            <Header />
+            <div className="container">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/search" element={<SymptomSearchEngine />} />
+                    <Route path="/sicklog" element={<SickLog />} />
+                </Routes>
+            </div>
+            <Footer />
+        </div>
     )
 }
 
