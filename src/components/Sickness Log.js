@@ -4,24 +4,21 @@ const SickLog = () => {
   const initialData = {
     symptoms: '',
     description: '',
-    date: '',
+    date: '', 
     comments: '',
   };
-  
+
   const [logData, setLogData] = useState(initialData);
   const [logs, setLogs] = useState([]);
-  
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setLogData({ ...logData, [name]: value });
-  }
-      
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      logData.symptoms.trim() === '' || logData.description.trim() === '' || logData.date === ''
-    ) {
+    if (logData.symptoms.trim() === '' || logData.description.trim() === '' || logData.date === '') {
       return;
     }
     const newLog = {
@@ -32,7 +29,7 @@ const SickLog = () => {
       comments: logData.comments,
     };
     setLogs([...logs, newLog]);
-    setLogData(initialData); 
+    setLogData(initialData);
   };
 
   return (
@@ -44,16 +41,23 @@ const SickLog = () => {
           <label>Description:</label>
           <textarea name="description" value={logData.description} onChange={handleInputChange}></textarea>
           <label>Date of Notice:</label>
-          <input name="date" type="date" value={logData.date} onChange={handleInputChange} placeholder="YYYY-MM-DD"></input>
+          <input name="date" type="text" value={logData.date} onChange={handleInputChange} placeholder="YYYY-MM-DD"></input>
           <label>Extra Comments:</label>
           <textarea name="comments" value={logData.comments} onChange={handleInputChange}></textarea>
           <button type="submit">Log Sickness</button>
         </form>
         <div>
+          <ul>
+            {logs.map((log) => (
+              <li key={log.id}>
+                {log.symptoms} - {log.date}
+              </li>
+            ))}
+          </ul>
         </div>
       </main>
     </div>
   );
-}
+};
 
 export default SickLog;
