@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import Footer from './Footer';
-import Header from './Header'
 
 const SickLog = () => {
-  const [logData, setLogData] = useState({
-      symptoms: '',
-      description: '',
-      date: '',
-      comments: '',
-    });
-    
+  const initialData = {
+    symptoms: '',
+    description: '',
+    date: '',
+    comments: '',
+  };
+  
+  const [logData, setLogData] = useState(initialData);
   const [logs, setLogs] = useState([]);
   
   const handleInputChange = (event) => {
@@ -31,12 +30,7 @@ const SickLog = () => {
       comments: logData.comments,
     };
     setLogs([...logs, newLog]);
-    setLogData({ 
-      symptoms: '',
-      description: '',
-      date: '',
-      comments: '',
-    });
+    setLogData(initialData);
   }
 
   return (
@@ -44,13 +38,13 @@ const SickLog = () => {
       <main>
         <form className="sicktrkr" onSubmit={handleSubmit}>
           <label>Symptoms:</label>
-          <textarea value={logData.symptoms} onChange={handleInputChange}></textarea>
+          <textarea name="symptoms" value={logData.symptoms} onChange={handleInputChange}></textarea>
           <label>Description:</label>
-          <textarea value={logData.description} onChange={handleInputChange}></textarea>
+          <textarea name="description" value={logData.description} onChange={handleInputChange}  placeholder="YYYY-MM-DD"></textarea>
           <label>Date of Notice:</label>
-          <input type="date" value={logData.date} onChange={handleInputChange} />
+          <input name="date" type="date" value={logData.date} onChange={handleInputChange} />
           <label>Extra Comments:</label>
-          <textarea value={logData.comments} onChange={handleInputChange}></textarea>
+          <textarea name="comments" value={logData.comments} onChange={handleInputChange}></textarea>
           <button type="submit">Log Sickness</button>
         </form>
         <div>

@@ -7,7 +7,7 @@ export default function Header() {
             <nav>
                 <ul>
                     <li><Link to="/">Sickness Tracker</Link></li>
-                    <li><CustomLink to="">Medication Tracker</CustomLink></li>
+                    <li><CustomLink to="/medtracker">Medication Tracker</CustomLink></li>
                     <li><CustomLink to="/sicklog">Sickness Log</CustomLink></li>
                     <li><CustomLink to="search/">Resources</CustomLink></li>
                     <li><CustomLink to="/about">About</CustomLink></li>

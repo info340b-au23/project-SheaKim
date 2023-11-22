@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SymptomSearchEngine.css'; // Import your CSS file for styling
+// import '../SymptomSearchEngine.css'; // Import your CSS file for styling
 import Footer from './Footer';
 import Header from './Header';
 

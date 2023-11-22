@@ -5,10 +5,22 @@ html {
 }
 
 body {
+    margin: 0;
     background: #ccc;
     font-family: 'Roboto', sans-serif;
     background-color: antiquewhite;
-}
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  .App {
+    text-align: center;
+  }
 
 .home_page {
     background: white; 
