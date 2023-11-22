@@ -617,15 +617,7 @@ h4 {
 body {
   background-color: #4d5bf9;
 }
-.container {
-  width: 80vmin;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  top: 120px;
-  background-color: #ffffff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
+
 .tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
