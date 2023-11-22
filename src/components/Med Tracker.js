@@ -1,6 +1,21 @@
 import { useState } from 'react';
 
 export default function MedTracker() {
+    let tabs = document.querySelectorAll(".tabs h3");
+    let tabContents = document.querySelectorAll(".tab-content div");
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+            tabContents.forEach((content) => {
+                content.classList.remove("active");
+    });
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    tabContents[index].classList.add("active");
+    tabs[index].classList.add("active");
+  });
+});
+
   const [formFields, setFormFields] = useState([
     { medicine: '', intakeinterval: '' },
   ])
@@ -72,7 +87,68 @@ export default function MedTracker() {
 
   return (
     <body>
-    <div class="mytabs">
+    <div class="container">
+      <div class="tabs">
+        <h3 class="active">Tab 1</h3>
+        <h3>Tab 2</h3>
+        <h3>Tab 3</h3>
+      </div>
+      <div class="tab-content">
+        <div class="active">
+            <h2>Today</h2>
+                 <div class="checklist">
+                   <label class="container">Take MEDICATION A (1 pill) at TIME
+                     <input type="checkbox"></input>
+                     <span class="checkmark"></span>
+                   </label>
+                   <label class="container">TAKE MEDICATION B (2 pills) at TIME and TIME
+                     <input type="checkbox"></input>
+                     <span class="checkmark"></span>
+                   </label>
+                   <label class="container">Pick up MEDICATION C in <b>2</b> days
+                     <input type="checkbox"></input>
+                     <span class="checkmark"></span>
+                   </label>
+                   </div>
+        </div>
+        <div>
+
+
+        <h2>Long Term</h2>
+                <p>See your upcoming medications</p>
+                <img src="../img/google-calendar.png" alt="Google calendar screen" width="900" height="600"></img>
+        </div>
+        <div>
+        <h2>Details</h2>
+                <p>See all your medication details here</p>
+                <ol class="rounded-list">
+                  <li><a href="">MEDICATION A</a></li>
+                  <ol>
+                    <li><a href="">1 time a day (anytime)</a></li>
+                    <li><a href="">2 pills</a></li>
+                    <li><a href="">Note: Take after eating</a></li>
+                  </ol>
+                  <li><a href="">MEDICATION B</a>
+                    <ol>
+                      <li><a href="">1 time a day (anytime)</a></li>
+                      <li><a href="">1 pill</a></li>
+                      <li><a href="">Note: Birth Control</a></li>
+                    </ol>
+                  </li>
+                  <li><a href="">MEDICATION C</a>
+                    <ol>
+                      <li><a href="">1 time a week</a></li>
+                      <li><a href="">1 teaspoon</a></li>
+                      <li><a href="">Note: NONE</a></li>
+                    </ol>
+                  </li>
+                </ol>
+        </div>
+      </div>
+    </div>
+
+
+    {/* <div class="mytabs">
                <input type="radio" id="tabfree" name="mytabs" checked="checked" />
                <label for="tabfree">Today</label>
                <div class="tab">
@@ -129,7 +205,8 @@ export default function MedTracker() {
                     </ol>
                   </li>
                 </ol>
-              </div>
+              </div> */}
+
     <div className="MedTracker">
       <form onSubmit={submit}>
         {formFields.map((form, index) => {
