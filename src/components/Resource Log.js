@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -7,18 +7,17 @@ const SymptomSearchEngine = ({ logs }) => {
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
 
-  const handleSearch = () => {
+  useEffect(() => {
+    // Update results whenever logs or searchTerm changes
     setSearching(true);
 
-    setTimeout(() => {
-      const filteredResults = logs.filter((log) =>
-        log.symptoms.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+    const filteredResults = logs.filter((log) =>
+      log.symptoms.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-      setResults(filteredResults);
-      setSearching(false);
-    }, 1000);
-  };
+    setResults(filteredResults);
+    setSearching(false);
+  }, [logs, searchTerm]);
 
   return (
     <div className="app-container">
@@ -30,7 +29,7 @@ const SymptomSearchEngine = ({ logs }) => {
           placeholder="Enter symptoms to search"
           className="search-input"
         />
-        <button onClick={handleSearch} disabled={searching} className="search-button">
+        <button onClick={() => setSearching(true)} disabled={searching} className="search-button">
           {searching ? 'Searching...' : 'Search'}
         </button>
       </div>
