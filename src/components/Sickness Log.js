@@ -29,12 +29,12 @@ const SickLog = () => {
     ) {
       return;
     }
-    const formattedDate = logData.date.toISOString().split('T')[0];
+    const date = logData.date.toISOString().split('T')[0];
     const newLog = {
       id: Date.now(),
       symptoms: logData.symptoms,
       description: logData.description,
-      date: formattedDate,
+      date: date,
       comments: logData.comments,
     };
     setLogs([...logs, newLog]);
