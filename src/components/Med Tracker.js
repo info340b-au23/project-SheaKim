@@ -87,11 +87,11 @@ export default function MedTracker() {
 
   return (
     <body>
-    <div class="container">
+    {/* <div class="container">
       <div class="tabs">
-        <h3 class="active">Tab 1</h3>
-        <h3>Tab 2</h3>
-        <h3>Tab 3</h3>
+        <h3 class="active">Today</h3>
+        <h3>Long Term</h3>
+        <h3>Details</h3>
       </div>
       <div class="tab-content">
         <div class="active">
@@ -145,10 +145,10 @@ export default function MedTracker() {
                 </ol>
         </div>
       </div>
-    </div>
+    </div> */}
 
 
-    {/* <div class="mytabs">
+    <div class="mytabs">
                <input type="radio" id="tabfree" name="mytabs" checked="checked" />
                <label for="tabfree">Today</label>
                <div class="tab">
@@ -205,7 +205,7 @@ export default function MedTracker() {
                     </ol>
                   </li>
                 </ol>
-              </div> */}
+              </div>
 
     <div className="MedTracker">
       <form onSubmit={submit}>
