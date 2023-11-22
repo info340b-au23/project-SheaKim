@@ -18,7 +18,7 @@ body {
       monospace;
   }
 
-  .App {
+  .MedTracker {
     text-align: center;
   }
 
@@ -209,7 +209,7 @@ button {
 }
 
 div {
-    width: 80%;
+    width: 100%;
 }
 
 .sicklog-img {
