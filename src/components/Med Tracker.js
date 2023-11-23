@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import calendar from '../img/google-calendar.png';
 
 export default function MedTracker() {
     let tabs = document.querySelectorAll(".tabs h3");
@@ -175,7 +176,7 @@ export default function MedTracker() {
               <div class="tab">
                 <h2>Long Term</h2>
                 <p>See your upcoming medications</p>
-                <img src="../img/google-calendar.png" alt="Google calendar screen" width="900" height="600"></img>
+                <img src={calendar} alt="Google calendar screen" width="900" height="600"></img>
               </div>
         
               <input type="radio" id="tabgold" name="mytabs" />
