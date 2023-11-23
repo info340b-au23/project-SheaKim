@@ -87,7 +87,7 @@ export default function HomePage() {
                     <div className="container">
                         <h4>Your Simple Sickness Tracker</h4>
                         <p>Make Health Easier</p>
-                        <img src={med} alt="Picture of mobile look"/>
+                        <img className="overview_img" src={med} alt="Picture of mobile look"/>
                     </div>
                 </section>
             </div>

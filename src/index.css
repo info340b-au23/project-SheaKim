@@ -656,6 +656,9 @@ h3 {
   color: #4d5bf9;
 }
 
+.overview_img {
+  height: 600px;
+}
 
 @media (max-width: 768px) {
   /* Styles for screens up to 768px wide */
