@@ -89,6 +89,13 @@ export default function MedTracker() {
         );
        
        };
+  
+  const responseMessage = (response) => {
+        console.log(response);
+    };
+  const errorMessage = (error) => {
+        console.log(error);
+    };
 
   const login = useGoogleLogin({
     onSuccess: codeResponse => console.log(codeResponse),
@@ -220,6 +227,7 @@ export default function MedTracker() {
               </div>
     
     <div class="calendar">
+    <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
     <GoogleOAuthProvider clientId="737643364541-a4lmervpmj6jubdqm2n0ag2084g4abk3.apps.googleusercontent.com">
     <GoogleLogin
   onSuccess={credentialResponse => {
