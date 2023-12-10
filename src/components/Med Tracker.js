@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import calendar from '../img/google-calendar.png';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+
 
 export default function MedTracker() {
     let tabs = document.querySelectorAll(".tabs h3");
@@ -85,6 +89,11 @@ export default function MedTracker() {
         );
        
        };
+
+  const login = useGoogleLogin({
+    onSuccess: codeResponse => console.log(codeResponse),
+  flow: 'auth-code',
+  });
 
   return (
     <body>
@@ -178,6 +187,8 @@ export default function MedTracker() {
                 <p>See your upcoming medications</p>
                 <img src={calendar} alt="Google calendar screen" width="900" height="600"></img>
               </div>
+
+
         
               <input type="radio" id="tabgold" name="mytabs" />
               <label for="tabgold">Details</label>
@@ -207,6 +218,22 @@ export default function MedTracker() {
                   </li>
                 </ol>
               </div>
+    
+    <div class="calendar">
+    <GoogleOAuthProvider clientId="737643364541-a4lmervpmj6jubdqm2n0ag2084g4abk3.apps.googleusercontent.com">
+    <GoogleLogin
+  onSuccess={credentialResponse => {
+    console.log(credentialResponse);
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>
+    <button onClick={() => login()}>Sign in with Google 🚀</button>;
+    </GoogleOAuthProvider>
+
+    </div>
+            
 
     <div className="MedTracker">
       <form onSubmit={submit}>
