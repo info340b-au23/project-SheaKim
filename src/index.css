@@ -557,6 +557,11 @@ h4 {
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .logged-in {
+    float: right;
+  }
+
 /* Default styles for larger screens */
 
 @media (max-width: 1200px) {

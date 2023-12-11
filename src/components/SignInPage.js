@@ -1,10 +1,13 @@
 import React from "react";
 import { getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import { StyledFirebaseAuth } from "react-firebaseui";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInPage(props) {
 
     const auth = getAuth();
+
+    const navigate = useNavigate();
 
     const configObj = {
         signInOptions: [
@@ -18,7 +21,10 @@ export default function SignInPage(props) {
         ],
         signInFlow: 'popup',
         callbacks: {
-            signInSuccessWithAuthResult: () => false
+            signInSuccessWithAuthResult: () => {
+                navigate("/"); 
+                return false; 
+              }
         },
         credentialHelper: 'none'
     }
