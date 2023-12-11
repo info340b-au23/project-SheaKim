@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
 import Visualization from './Visualization';
+import DynamicTable from './DynamicTable';
+import './SicknessLog.css';
 
 const SickLog = () => {
   const initialData = {
@@ -58,6 +60,7 @@ const SickLog = () => {
           <button type="submit">Log Sickness</button>
         </form>
         <div>
+          <DynamicTable data={logs} />
           <Visualization logs={logs} />
         </div>
       </main>
