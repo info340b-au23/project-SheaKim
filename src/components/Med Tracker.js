@@ -227,17 +227,17 @@ export default function MedTracker() {
               </div>
     
     <div class="calendar">
-    <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+    {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
     <GoogleOAuthProvider clientId="737643364541-a4lmervpmj6jubdqm2n0ag2084g4abk3.apps.googleusercontent.com">
-    <GoogleLogin
+    {/* <GoogleLogin
   onSuccess={credentialResponse => {
     console.log(credentialResponse);
   }}
   onError={() => {
     console.log('Login Failed');
   }}
-/>
-    <button onClick={() => login()}>Sign in with Google 🚀</button>;
+/> */}
+    <button onClick={() => login()}>Sign in with Google 🚀</button>
     </GoogleOAuthProvider>
 
     </div>
