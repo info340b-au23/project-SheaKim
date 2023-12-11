@@ -16,7 +16,6 @@ function App() {
     return (
         <div>
             <Header />
-            <div className="container">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/signin" element={<SignInPage />} />
@@ -25,9 +24,10 @@ function App() {
                     <Route path="/search" element={<SymptomSearchEngine />} />
                     <Route path="/sicklog" element={<SickLog />} />
                 </Routes>
-            </div>
             <Footer />
         </div>
+
+        
     )
 }
 

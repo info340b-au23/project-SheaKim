@@ -3,8 +3,6 @@ import { getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 import { StyledFirebaseAuth } from "react-firebaseui";
 
 export default function SignInPage(props) {
-    // const currentUser = props.currentUser;
-    // const loginFunction = props.loginCallback;
 
     const auth = getAuth();
 

@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";

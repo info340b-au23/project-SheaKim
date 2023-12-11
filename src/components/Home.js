@@ -17,8 +17,7 @@ export default function HomePage() {
                 <div className="slogan">
                     <h2>Your Wingman to Health</h2>
                     <p>Track your medication, log your sickness, and find resources to support your health</p>
-                    <Link to="/signin" ><button>Login</button></Link>
-                    <Link to="/signin" ><button>Sign Up</button></Link>
+                    <Link to="/signin" ><button>Get Started</button></Link>
                     <img src={health} alt="cartoon drawings of healthcare workers"/>
                 </div>
             </section>
