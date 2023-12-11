@@ -17,14 +17,14 @@ export default function Header() {
     )
 }
 
-function CustomLink({ to, children, ...props }) {
+export function CustomLink({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
     return (
-        <li className={isActive === to ? "active" : ""}>
+        <a className={isActive === to ? "active" : ""}>
             <Link to={to} {...props}>
                 {children}
             </Link>
-        </li>
+        </a>
     )
 }

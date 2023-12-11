@@ -7,9 +7,11 @@ import HomePage from './components/Home';
 import SymptomSearchEngine from './components/Resource Log';
 import SickLog from './components/Sickness Log';
 import MedTracker from './components/Med Tracker';
+import SignInPage from "./components/SignInPage";
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
+
 
     return (
         <div>
@@ -17,6 +19,7 @@ function App() {
             <div className="container">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/signin" element={<SignInPage />} />
                     <Route path="/medtracker" element={<MedTracker />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/search" element={<SymptomSearchEngine />} />
@@ -27,13 +30,5 @@ function App() {
         </div>
     )
 }
-
-
-// function App() {
-
-//     return (
-//         <MedTracker />
-//     )
-// }
 
 export default App;

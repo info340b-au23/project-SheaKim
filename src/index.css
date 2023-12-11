@@ -12,7 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
@@ -23,7 +23,7 @@ body {
   }
 
 .home_page {
-    background: white; 
+    background: white;
     width: 100%;
     height: 100%;
 }
@@ -535,8 +535,28 @@ h4 {
     padding: .5rem;
     font-weight: 500;
 }
+ .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
+  .search-button {
+    padding: 10px 15px;
+    background-color: #4b2e83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 /* Default styles for larger screens */
 
 @media (max-width: 1200px) {
@@ -618,15 +638,7 @@ h4 {
 body {
   background-color: #4d5bf9;
 }
-.container {
-  width: 80vmin;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  top: 120px;
-  background-color: #ffffff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
+
 .tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -665,6 +677,9 @@ h3 {
   color: #4d5bf9;
 }
 
+.overview_img {
+  height: 600px;
+}
 
 @media (max-width: 768px) {
   /* Styles for screens up to 768px wide */
@@ -704,4 +719,4 @@ h3 {
   .card img {
     width: 60px;
   }
-}
+  }
