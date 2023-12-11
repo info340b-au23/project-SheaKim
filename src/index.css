@@ -535,7 +535,28 @@ h4 {
     padding: .5rem;
     font-weight: 500;
 }
-
+ .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    background-color: #4b2e83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 /* Default styles for larger screens */
 
 @media (max-width: 1200px) {
@@ -698,26 +719,4 @@ h3 {
   .card img {
     width: 60px;
   }
-  }
-  .search-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-input {
-    flex: 1;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .search-button {
-    padding: 10px 15px;
-    background-color: #4b2e83;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
   }
