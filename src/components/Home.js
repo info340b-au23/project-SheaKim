@@ -8,6 +8,7 @@ import sickLog from '../img/sickness_log_ex.png';
 import resource from '../img/resources_ex.png';
 import graph from '../img/graph_example.jpg';
 import med from '../img/med_example.jpeg';
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
     return (    
@@ -16,8 +17,8 @@ export default function HomePage() {
                 <div className="slogan">
                     <h2>Your Wingman to Health</h2>
                     <p>Track your medication, log your sickness, and find resources to support your health</p>
-                    <button>Login</button>
-                    <button>Sign Up</button>
+                    <Link to="/signin" ><button>Login</button></Link>
+                    <Link to="/signin" ><button>Sign Up</button></Link>
                     <img src={health} alt="cartoon drawings of healthcare workers"/>
                 </div>
             </section>
@@ -87,7 +88,7 @@ export default function HomePage() {
                     <div className="container">
                         <h4>Your Simple Sickness Tracker</h4>
                         <p>Make Health Easier</p>
-                        <img src={med} alt="Picture of mobile look"/>
+                        <img className="overview_img" src={med} alt="Picture of mobile look"/>
                     </div>
                 </section>
             </div>

@@ -1,6 +1,26 @@
 import { useState } from 'react';
+import calendar from '../img/google-calendar.png';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+
 
 export default function MedTracker() {
+    let tabs = document.querySelectorAll(".tabs h3");
+    let tabContents = document.querySelectorAll(".tab-content div");
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+            tabContents.forEach((content) => {
+                content.classList.remove("active");
+    });
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    tabContents[index].classList.add("active");
+    tabs[index].classList.add("active");
+  });
+});
+
   const [formFields, setFormFields] = useState([
     { medicine: '', intakeinterval: '' },
   ])
@@ -69,9 +89,82 @@ export default function MedTracker() {
         );
        
        };
+  
+  const responseMessage = (response) => {
+        console.log(response);
+    };
+  const errorMessage = (error) => {
+        console.log(error);
+    };
+
+  const login = useGoogleLogin({
+    onSuccess: codeResponse => console.log(codeResponse),
+  flow: 'auth-code',
+  });
 
   return (
     <body>
+    {/* <div class="container">
+      <div class="tabs">
+        <h3 class="active">Today</h3>
+        <h3>Long Term</h3>
+        <h3>Details</h3>
+      </div>
+      <div class="tab-content">
+        <div class="active">
+            <h2>Today</h2>
+                 <div class="checklist">
+                   <label class="container">Take MEDICATION A (1 pill) at TIME
+                     <input type="checkbox"></input>
+                     <span class="checkmark"></span>
+                   </label>
+                   <label class="container">TAKE MEDICATION B (2 pills) at TIME and TIME
+                     <input type="checkbox"></input>
+                     <span class="checkmark"></span>
+                   </label>
+                   <label class="container">Pick up MEDICATION C in <b>2</b> days
+                     <input type="checkbox"></input>
+                     <span class="checkmark"></span>
+                   </label>
+                   </div>
+        </div>
+        <div>
+
+
+        <h2>Long Term</h2>
+                <p>See your upcoming medications</p>
+                <img src="../img/google-calendar.png" alt="Google calendar screen" width="900" height="600"></img>
+        </div>
+        <div>
+        <h2>Details</h2>
+                <p>See all your medication details here</p>
+                <ol class="rounded-list">
+                  <li><a href="">MEDICATION A</a></li>
+                  <ol>
+                    <li><a href="">1 time a day (anytime)</a></li>
+                    <li><a href="">2 pills</a></li>
+                    <li><a href="">Note: Take after eating</a></li>
+                  </ol>
+                  <li><a href="">MEDICATION B</a>
+                    <ol>
+                      <li><a href="">1 time a day (anytime)</a></li>
+                      <li><a href="">1 pill</a></li>
+                      <li><a href="">Note: Birth Control</a></li>
+                    </ol>
+                  </li>
+                  <li><a href="">MEDICATION C</a>
+                    <ol>
+                      <li><a href="">1 time a week</a></li>
+                      <li><a href="">1 teaspoon</a></li>
+                      <li><a href="">Note: NONE</a></li>
+                    </ol>
+                  </li>
+                </ol>
+        </div>
+      </div>
+    </div> */}
+
+
     <div class="mytabs">
                <input type="radio" id="tabfree" name="mytabs" checked="checked" />
                <label for="tabfree">Today</label>
@@ -99,8 +192,10 @@ export default function MedTracker() {
               <div class="tab">
                 <h2>Long Term</h2>
                 <p>See your upcoming medications</p>
-                <img src="../img/google-calendar.png" alt="Google calendar screen" width="900" height="600"></img>
+                <img src={calendar} alt="Google calendar screen" width="900" height="600"></img>
               </div>
+
+
         
               <input type="radio" id="tabgold" name="mytabs" />
               <label for="tabgold">Details</label>
@@ -130,6 +225,24 @@ export default function MedTracker() {
                   </li>
                 </ol>
               </div>
+    
+    <div class="calendar">
+    <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+    <GoogleOAuthProvider clientId="737643364541-a4lmervpmj6jubdqm2n0ag2084g4abk3.apps.googleusercontent.com">
+    <GoogleLogin
+  onSuccess={credentialResponse => {
+    console.log(credentialResponse);
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>
+    <button onClick={() => login()}>Sign in with Google 🚀</button>;
+    </GoogleOAuthProvider>
+
+    </div>
+            
+
     <div className="MedTracker">
       <form onSubmit={submit}>
         {formFields.map((form, index) => {
