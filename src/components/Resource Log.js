@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import '../SymptomSearchEngine.css'; // Import your CSS file for styling
 import Footer from './Footer';
 import Header from './Header';
 
@@ -35,6 +34,10 @@ const SymptomSearchEngine = ({ logs }) => {
           {searching ? 'Searching...' : 'Search'}
         </button>
       </div>
+
+      {/* Add some spacing for better readability */}
+      <div style={{ margin: '20px 0' }}></div>
+
       <div className="results-container">
         {searching && <p className="search-status">Searching for symptoms...</p>}
         {!searching && results.length > 0 && (
