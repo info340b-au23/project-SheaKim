@@ -4,7 +4,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { useGoogleLogin } from '@react-oauth/google';
 //import { GoogleLogin } from '@react-oauth/google';
 import React, { useEffect } from "react";
-import axios from 'axios';
+import Calendar from 'react-calendar';
 
 
 export default function MedTracker() {
@@ -131,62 +131,29 @@ export default function MedTracker() {
 
 
 
+  const [date, setDate] = useState(new Date());
+  const [events, setEvents] = useState([]);
   const [eventTitle, setEventTitle] = useState('');
-  const [eventDescription, setEventDescription] = useState('');
-  const [eventStartDateTime, setEventStartDateTime] = useState('');
-  const [eventEndDateTime, setEventEndDateTime] = useState('');
-  const [feedback, setFeedback] = useState('');
 
-  const handleAddEvent = async (e) => {
-    e.preventDefault();
-
-    try {
-      // Assuming accessToken is available (obtained after Google login)
-      const accessToken = 'YOUR_ACCESS_TOKEN'; // Replace with the actual access token
-
-      // Example: Call the function to add events with the obtained accessToken
-      await addEventsToGoogleCalendar(accessToken);
-    } catch (error) {
-      console.error('Error adding events:', error);
-      setFeedback('Error adding events. Please try again.');
-    }
+  const handleDateChange = (date) => {
+    setDate(date);
   };
 
-  const addEventsToGoogleCalendar = async (accessToken) => {
-    const calendarId = 'primary'; // Replace with the user's calendar ID or fetch dynamically
-
-    try {
-      const eventData = {
-        summary: eventTitle,
-        description: eventDescription,
-        start: {
-          dateTime: new Date(eventStartDateTime).toISOString(),
-          timeZone: 'Your Time Zone', // Replace with the actual time zone
-        },
-        end: {
-          dateTime: new Date(eventEndDateTime).toISOString(),
-          timeZone: 'Your Time Zone', // Replace with the actual time zone
-        },
-      };
-
-      const response = await axios.post(
-        `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events`,
-        eventData,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-
-      console.log('Event added successfully:', response.data);
-      setFeedback('Event added successfully!');
-    } catch (error) {
-      console.error('Error adding events:', error);
-      setFeedback('Error adding events. Please try again.');
-    }
+  const handleEventTitleChange = (e) => {
+    setEventTitle(e.target.value);
   };
+
+  const handleAddEvent = () => {
+    if (eventTitle.trim() === '') {
+      alert('Please enter an event title.');
+      return;
+    }
+
+    const newEvent = { date, title: eventTitle };
+    setEvents([...events, newEvent]);
+    setEventTitle('');
+  };
+
 
   return (
     <body>
@@ -258,50 +225,29 @@ export default function MedTracker() {
 
 
     <div>
-        <form onSubmit={handleAddEvent}>
-          <label>
-            Event Title:
-            <input
-              type="text"
-              value={eventTitle}
-              onChange={(e) => setEventTitle(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Event Description:
-            <textarea
-              value={eventDescription}
-              onChange={(e) => setEventDescription(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Start Date and Time:
-            <input
-              type="datetime-local"
-              value={eventStartDateTime}
-              onChange={(e) => setEventStartDateTime(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            End Date and Time:
-            <input
-              type="datetime-local"
-              value={eventEndDateTime}
-              onChange={(e) => setEventEndDateTime(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <button type="submit">Add Event to Google Calendar</button>
-        </form>
-        <p>{feedback}</p>
+      <h1>Event Calendar</h1>
+      <div>
+        <label>
+          Event Title:
+          <input type="text" value={eventTitle} onChange={handleEventTitleChange} />
+        </label>
+        <button onClick={handleAddEvent}>Add Event</button>
       </div>
+      <div>
+        <label>Select Date: </label>
+        <Calendar onChange={handleDateChange} value={date} />
+      </div>
+      <div>
+        <h2>Events:</h2>
+        <ul>
+          {events.map((event, index) => (
+            <li key={index}>
+              {event.title} - {event.date.toDateString()}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
 
 
 
