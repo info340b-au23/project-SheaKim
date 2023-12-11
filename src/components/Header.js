@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth'
 
-export default function Header() {
+export default function Header(props) {
+    const currentUser = props.currentUser;
+    const auth = getAuth();
+    const [user, loading, error] = useAuthState(auth);
+
+
+    const handleSignOut = (event) => {
+        signOut(getAuth());
+    }
+
     return (
         <header>
             <nav>
@@ -11,6 +22,12 @@ export default function Header() {
                     <li><CustomLink to="/sicklog">Sickness Log</CustomLink></li>
                     <li><CustomLink to="search/">Resources</CustomLink></li>
                     <li><CustomLink to="/about">About</CustomLink></li>
+                    {user &&
+                        <>
+                        <button className="btn btn-secondary btn-sm logged-in" onClick={handleSignOut}>Sign Out</button>
+                        <li className="logged-in mt-1">Welcome, {user.displayName}</li>
+                        </>
+                    }
                 </ul>
             </nav>
         </header>
