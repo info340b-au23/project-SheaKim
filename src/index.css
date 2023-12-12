@@ -29,6 +29,102 @@ body {
 }
 
 .mytabs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.tab {
+  display: none;
+}
+
+.mytabs label {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #4b2e83;
+  border: 2px solid #4b2e83;
+  border-radius: 4px 4px 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+.mytabs label:hover,
+.mytabs input[type="radio"]:checked + label {
+  background-color: #4b2e83;
+  border: 2px solid #4b2e83;
+  color: white;
+}
+
+.mytabs input[type="radio"] {
+  display: none;
+}
+
+.mytabs input[type="radio"]:checked + label {
+  color: #4b2e83;
+}
+
+.active {
+  display: block;
+}
+
+.checklist {
+  margin-top: 10px;
+}
+
+.checklist label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checklist button {
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checklist button:hover {
+  background-color: #45a049;
+}
+
+.MedTracker {
+  margin-top: 20px;
+}
+
+.MedTracker form {
+  display: flex;
+  flex-direction: column;
+}
+
+.MedTracker input,
+.MedTracker select {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.MedTracker button {
+  background-color: #4b2e83;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.MedTracker button:hover {
+  background-color: #4b2e83;
+}
+
+.mytabs {
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
@@ -42,7 +138,7 @@ body {
 
 .mytabs label {
     padding: 25px;
-    background: #e2e2e2;
+    background: #BFBFBF;
     font-weight: bold;
 }
 
