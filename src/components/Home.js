@@ -8,16 +8,30 @@ import sickLog from '../img/sickness_log_ex.png';
 import resource from '../img/resources_ex.png';
 import graph from '../img/graph_example.jpg';
 import med from '../img/med_example.jpeg';
-import { Link } from 'react-router-dom';
 
-export default function HomePage() {
+import { Link } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+export default function HomePage(props) {
+    const currentUser = props.currentUser;
+    const auth = getAuth();
+    const [user] = useAuthState(auth);
+
     return (    
         <body className="home_page">
             <section>
                 <div className="slogan">
                     <h2>Your Wingman to Health</h2>
                     <p>Track your medication, log your sickness, and find resources to support your health</p>
-                    <Link to="/signin" ><button>Get Started</button></Link>
+                    {user &&
+                        <>
+                        <p className="text-center font-weight-bold">Hello, {user.displayName}</p>
+                        </>
+                    }
+                    {!user &&
+                        <Link to="/signin" ><button>Get Started</button></Link>
+                    }
                     <img src={health} alt="cartoon drawings of healthcare workers"/>
                 </div>
             </section>
