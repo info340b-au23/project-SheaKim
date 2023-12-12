@@ -10,5 +10,4 @@ Health Wingman is a health tracker app that allows you to monitor different aspe
 After downloading the repository, run `npm install` to install the necessary dependencies.
 
 ## To access the website
-Click the link [HERE](https://health-wingman-6722f.web.app/sicklog
-)
+Click the link [HERE](https://info340-sickness-tracker.web.app/)
