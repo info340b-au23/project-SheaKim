@@ -3,7 +3,6 @@ import SymptomSearchEngine from './SymptomSearchEngine';
 import Footer from './Footer';
 import Header from './Header';
 import data from './searchResults.json';
-import './Search.css';
 
 
 
