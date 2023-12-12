@@ -2,15 +2,18 @@ import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useNavigate } from 'react-router-dom';
 
 export default function Header(props) {
     const currentUser = props.currentUser;
     const auth = getAuth();
     const [user, loading, error] = useAuthState(auth);
 
+    const navigate = useNavigate();
 
     const handleSignOut = (event) => {
         signOut(getAuth());
+        navigate("/"); 
     }
 
     return (
