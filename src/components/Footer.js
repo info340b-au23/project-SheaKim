@@ -4,9 +4,10 @@ export default function Footer() {
     return (
         <div className="footer-container">
         <footer>
-            <p><a href="mailto:email@sickness"><span class="material-icons">email</span> email@sickness.uw.edu</a></p>
-            <p><a href="tel:555-123-4567"><span class="material-icons">phone</span> 555-123-4567</a></p>
-            <p>&copy; Sickness Tracker</p>
+            <p><a href="mailto:sheakim2@uw.edu"><span class="material-icons"></span> email@sickness.uw.edu</a></p>
+            <p><a href="tel:2066773738"><span class="material-icons">phone: </span> 555-123-4567</a></p>
+            <p>Sheamin Kim, Andrew Chiang, Jainaba Jawara, Vaibava Venkatesan</p>
+            <p>&copy; Health Wingman</p>
         </footer>
         </div>
     )

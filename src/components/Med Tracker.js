@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import calendar from '../img/google-calendar.png';
 import React, { useEffect } from "react";
 import Calendar from 'react-calendar';
 import './SicknessLog.css';
@@ -170,6 +169,7 @@ export default function MedTracker() {
         <input type="radio" id="tabsilver" name="mytabs" />
         <label htmlFor="tabsilver">Long Term</label>
         <div className={`tab ${activeTabIndex === 1 ? 'active' : ''}`}>
+          <div className='sicktrkr'>
           <h2>Reminder Form</h2>
           <p>Set reminders for your upcoming medications!</p>
           <div>
@@ -184,6 +184,7 @@ export default function MedTracker() {
             <div>
               <label>Select Date: </label>
               <Calendar onChange={handleDateChange} value={date} />
+            </div>
             </div>
           </div>
         </div>
