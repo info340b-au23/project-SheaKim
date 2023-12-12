@@ -2,19 +2,23 @@ import { useState } from 'react';
 import calendar from '../img/google-calendar.png';
 import React, { useEffect } from "react";
 import Calendar from 'react-calendar';
+import './SicknessLog.css';
 
 
 export default function MedTracker() {
 
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [dose, setDose] = useState('pill(s)');
+  const [amount, setAmount] = useState('2');
+  const [detailsContent, setDetailsContent] = useState([]);
+  const [formFields, setFormFields] = useState([{ medicine: '', intakeinterval: '' }]);
+
+
 
   const handleTabClick = (index) => {
     setActiveTabIndex(index);
   };
 
-  const [formFields, setFormFields] = useState([
-    { medicine: '', intakeinterval: '' },
-  ]);
 
   const handleDeleteCheckedReminders = () => {
     const uncheckedReminders = todayReminders.filter((reminder) => !reminder.checked);
@@ -22,82 +26,72 @@ export default function MedTracker() {
   };
 
 
-  // let tabs = document.querySelectorAll(".tabs h3");
-  // let tabContents = document.querySelectorAll(".tab-content div");
-  // tabs.forEach((tab, index) => {
-  //   tab.addEventListener("click", () => {
-  //     tabContents.forEach((content) => {
-  //       content.classList.remove("active");
-  //     });
-  //     tabs.forEach((tab) => {
-  //       tab.classList.remove("active");
-  //     });
-  //     tabContents[index].classList.add("active");
-  //     tabs[index].classList.add("active");
-  //   });
-  // });
-
   const handleFormChange = (event, index) => {
+    const { name, value } = event.target;
     let data = [...formFields];
-    data[index][event.target.name] = event.target.value;
+    data[index] = { ...data[index], [name]: value };
     setFormFields(data);
-  }
+  };
+  
+
+  const handleDetailsUpdate = () => {
+    const content = formFields.map((medication, index) => (
+      <div key={index}>
+        <h3>{medication.medicine}</h3>
+        <p>{medication.intakeinterval} times a day</p>
+        <p>{medication.amount} {medication.dose}</p>
+      </div>
+    ));
+    setDetailsContent(content);
+  };
+
+
+  useEffect(() => {
+    handleDetailsUpdate();
+  }, [formFields, dose, amount]);
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(formFields);
+    handleDetailsUpdate();
+    setFormFields([{ medicine: '', intakeinterval: '', dose: '', amount: '' }]);
   };
 
   const addFields = () => {
-    let object = {
-      medicine: '',
-      intakeinterval: ''
-    }
-
-    setFormFields([...formFields, object])
-  }
+    setFormFields([...formFields, { medicine: '', intakeinterval: '', dose: '', amount: '' }]);
+  };
 
   const removeFields = (index) => {
     let data = [...formFields];
-    data.splice(index, 1)
-    setFormFields(data)
-  }
-
-  const [dose, setDose] = useState('pill(s)');
-  const [amount, setAmount] = useState('2');
-
-  const handleDoseChange = (event) => {
-    setDose(event.target.value);
+    data.splice(index, 1);
+    setFormFields(data);
   };
 
-  const handleAmountChange = (event) => {
-    setAmount(event.target.value);
+  const handleDoseChange = (event, index) => {
+    const { value } = event.target;
+    let data = [...formFields];
+    data[index] = { ...data[index], dose: value };
+    setFormFields(data);
   };
 
-  const Dropdown = ({ label, value, options, onChange }) => {
-
-    return (
-
-      <label>
-
-        {label}
-
-        <select value={value} onChange={onChange}>
-
-          {options.map((option) => (
-
-            <option value={option.value}>{option.label}</option>
-
-          ))}
-
-        </select>
-
-      </label>
-
-    );
-
+  const handleAmountChange = (event, index) => {
+    const { value } = event.target;
+    let data = [...formFields];
+    data[index] = { ...data[index], amount: value };
+    setFormFields(data);
   };
 
+  const Dropdown = ({ label, value, options, onChange }) => (
+    <label>
+      {label}
+      <select value={value} onChange={onChange}>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
 
 
   const [date, setDate] = useState(new Date());
@@ -112,7 +106,6 @@ export default function MedTracker() {
     setEventTitle(e.target.value);
   };
 
-  // Renamed handleAddEvent to handleNewReminder
   const [todayReminders, setTodayReminders] = useState([]);
 
   const handleNewReminder = () => {
@@ -122,8 +115,8 @@ export default function MedTracker() {
     }
 
     const newReminder = { date, title: eventTitle };
-    setEvents([...events, newReminder]); // Update the global events state
-    setTodayReminders([...todayReminders, newReminder]); // Update the Today tab's reminders
+    setEvents([...events, newReminder]);
+    setTodayReminders([...todayReminders, newReminder]);
     setEventTitle('');
   };
 
@@ -173,167 +166,100 @@ export default function MedTracker() {
           </div>
         </div>
 
-        {/* <input type="radio" id="tabfree" name="mytabs" checked="checked" />
-        <label for="tabfree">Today</label>
-        <div class="tab">
-          <h2>Today</h2>
-          <div class="checklist">
-            <label class="container">Take MEDICATION A (1 pill) at TIME
-              <input type="checkbox"></input>
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">TAKE MEDICATION B (2 pills) at TIME and TIME
-              <input type="checkbox"></input>
-              <span class="checkmark"></span>
-            </label>
-            <label class="container">Pick up MEDICATION C in <b>2</b> days
-              <input type="checkbox"></input>
-              <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-      </div> */}
-
-      <input type="radio" id="tabsilver" name="mytabs" />
-      <label for="tabsilver">Long Term</label>
-      <div class="tab">
-        <h2>Long Term</h2>
-        <p>See your upcoming medications</p>
-        <div>
-          <h1>Event Calendar</h1>
+<div className="mytabs">
+        <input type="radio" id="tabsilver" name="mytabs" />
+        <label htmlFor="tabsilver">Long Term</label>
+        <div className={`tab ${activeTabIndex === 1 ? 'active' : ''}`}>
+          <h2>Reminder Form</h2>
+          <p>Set reminders for your upcoming medications!</p>
           <div>
-            <label>
-              Reminder Title:
-              <input
-                type="text"
-                value={eventTitle}
-                onChange={handleEventTitleChange}
-              />
-            </label>
-            <button onClick={handleNewReminder}>Add Reminder</button>
-          </div>
-          <div>
-            <label>Select Date: </label>
-            <Calendar onChange={handleDateChange} value={date} />
+            <h1>Calendar</h1>
+            <div>
+              <label>
+                Reminder Title:
+                <input type="text" value={eventTitle} onChange={handleEventTitleChange} />
+              </label>
+              <button onClick={handleNewReminder}>Add Reminder</button>
+            </div>
+            <div>
+              <label>Select Date: </label>
+              <Calendar onChange={handleDateChange} value={date} />
+            </div>
           </div>
         </div>
       </div>
 
-      <input type="radio" id="tabgold" name="mytabs" />
-      <label for="tabgold">Details</label>
-      <div class="tab">
-        <h2>Details</h2>
-        <p>See all your medication details here</p>
-        <ol class="rounded-list">
-          <li><a href="">MEDICATION A</a></li>
-          <ol>
-            <li><a href="">1 time a day (anytime)</a></li>
-            <li><a href="">2 pills</a></li>
-            <li><a href="">Note: Take after eating</a></li>
-          </ol>
-          <li><a href="">MEDICATION B</a>
-            <ol>
-              <li><a href="">1 time a day (anytime)</a></li>
-              <li><a href="">1 pill</a></li>
-              <li><a href="">Note: Birth Control</a></li>
-            </ol>
-          </li>
-          <li><a href="">MEDICATION C</a>
-            <ol>
-              <li><a href="">1 time a week</a></li>
-              <li><a href="">1 teaspoon</a></li>
-              <li><a href="">Note: NONE</a></li>
-            </ol>
-          </li>
-        </ol>
+      <div className="mytabs">
+        <input type="radio" id="tabgold" name="mytabs" />
+        <label htmlFor="tabgold">Details</label>
+        <div className={`tab ${activeTabIndex === 2 ? 'active' : ''}`}>
+          <h2>Details</h2>
+          <p>See and add all your medication details here</p>
+          <div className="details-content">
+            {detailsContent.length > 0 ? detailsContent : <p>No details available</p>}
+          </div>
+        </div>
       </div>
-      </div>
-
+      
 
       <div className="MedTracker">
-        <form onSubmit={submit}>
-          {formFields.map((form, index) => {
-            return (
-              <div key={index}>
+            <form onSubmit={submit}>
+              {formFields.map((form, index) => {
+                return (
+                  <div key={index}>
                 <input
-                  name='medicine'
-                  placeholder='Medicine Name'
-                  onChange={event => handleFormChange(event, index)}
-                  value={form.name}
+                  name="medicine"
+                  placeholder="Medicine Name"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.medicine}
                 />
                 <input
-                  name='intakeinterval'
-                  placeholder='Intake Interval (per day)'
-                  onChange={event => handleFormChange(event, index)}
-                  value={form.age}
+                  name="intakeinterval"
+                  placeholder="Intake Interval (per day)"
+                  onChange={(event) => handleFormChange(event, index)}
+                  value={form.intakeinterval}
                 />
 
-                <div>
+              <div>
+              <Dropdown
+                label="Type of Dosage"
+                options={[
+                  { label: 'Capsules', value: 'capsule' },
+                  { label: 'Pills', value: 'pills' },
+                  { label: 'Tablespoon', value: 'tablespoon' },
+                  { label: 'Teaspoon', value: 'teaspoon' },
+                ]}
+                value={form.dose}
+                onChange={(event) => handleDoseChange(event, index)}
+              />
 
-                  <Dropdown
-
-                    label="Type of Dosage"
-
-                    options={[
-
-                      { label: 'Capsules', value: 'capsule' },
-
-                      { label: 'Pills', value: 'pills' },
-
-                      { label: 'Tablespoon', value: 'tablespoon' },
-                      { label: 'Teaspoon', value: 'teaspoon' },
-
-                    ]}
-
-                    value={dose}
-
-                    onChange={handleDoseChange}
-
-                  />
-
-                  <Dropdown
-
-                    label="Number of Doses"
-
-                    options={[
-
-                      { label: '1', value: '1' },
-
-                      { label: '2', value: '2' },
-
-                      { label: '3', value: '3' },
-
-                      { label: '4', value: '4' },
-
-                      { label: '5', value: '5' },
-
-                      { label: '6', value: '6' },
-
-                      { label: '7', value: '7' },
-
-                      { label: '8', value: '8' },
-
-                    ]}
-
-                    value={amount}
-
-                    onChange={handleAmountChange}
-
-                  />
-
-                </div>
-
-                <button onClick={() => removeFields(index)}>Remove</button>
-              </div>
-            )
-          })}
-
-        </form>
-        <button onClick={addFields}>Add More..</button>
-        <br />
-        <button onClick={submit}>Submit</button>
-      </div>
-      </div>
+              <Dropdown
+                label="Number of Doses"
+                options={[
+                  { label: '1', value: '1' },
+                  { label: '2', value: '2' },
+                  { label: '3', value: '3' },
+                  { label: '4', value: '4' },
+                  { label: '5', value: '5' },
+                  { label: '6', value: '6' },
+                  { label: '7', value: '7' },
+                  { label: '8', value: '8' },
+                ]}
+                value={form.amount}
+                onChange={(event) => handleAmountChange(event, index)}
+              />
+                                  </div>
+                    <button onClick={() => removeFields(index)}>Remove</button>
+                  </div>
+                );
+              })}
+            </form>
+            <button onClick={addFields}>Add More..</button>
+            <br />
+            <button onClick={submit}>Submit</button>
+          </div>
+    </div>
+    </div>
   );
 
         }

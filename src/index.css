@@ -29,6 +29,94 @@ body {
 }
 
 .mytabs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.tab {
+  display: none;
+}
+
+.mytabs label {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #8a2be2; /* Purple color */
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  color: white; /* White font color */
+}
+
+.mytabs label:hover {
+  background-color: #6a1a9b; /* Darker purple color on hover */
+}
+
+.mytabs input[type="radio"] {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.checklist {
+  margin-top: 10px;
+}
+
+.checklist label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.checklist button {
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checklist button:hover {
+  background-color: #45a049;
+}
+
+.MedTracker {
+  margin-top: 20px;
+}
+
+.MedTracker form {
+  display: flex;
+  flex-direction: column;
+}
+
+.MedTracker input,
+.MedTracker select {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.MedTracker button {
+  background-color: #8a2be2; /* Purple color */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.MedTracker button:hover {
+  background-color: #6a1a9b; /* Darker purple color on hover */
+}
+
+.mytabs {
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
