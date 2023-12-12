@@ -6,6 +6,7 @@ import data from './searchResults.json';
 import './Search.css';
 
 
+
 function App() {
   const [searchInput, setSearchInput] = useState('');
 
