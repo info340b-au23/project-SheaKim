@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
 export default function Header(props) {
