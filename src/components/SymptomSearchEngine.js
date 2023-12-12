@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Search.css';
 
 function SymptomSearchEngine({ input, data }) {
   const [selectedItem, setSelectedItem] = useState(null);
